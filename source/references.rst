@@ -15,3 +15,12 @@ References
 
 .. [FWH] Firmware Handoff specification <https://github.com/FirmwareHandoff/firmware_handoff>__`
 
+.. [DT] `Devicetree Specification v0.4 <https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.4>`__
+
+.. [OPTEECore] `OP-TEE Core Architecture v4.5 <https://optee.readthedocs.io/en/4.5.0/architecture/core.html>`__
+
+.. [TFAFFAMB] TF-A Secure Partition Manager: `FF-A manifest binding to device tree v2.12 <https://trustedfirmware-a.readthedocs.io/en/v2.12.0/components/ffa-manifest-binding.html>`__
+
+.. [TF_BL31] `Data structures used in the BL31 cold boot interface v2.12 <https://trustedfirmware-a.readthedocs.io/en/v2.12.0/design/firmware-design.html#data-structures-used-in-the-bl31-cold-boot-interface>`__
+
+.. [SPMCATTR] `The SPMC manifest v2.12: <https://hafnium.readthedocs.io/en/v2.12.0/secure-partition-manager/secure-partition-manager.html#spmc-manifest>`__

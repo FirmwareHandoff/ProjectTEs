@@ -10,5 +10,6 @@ Project Specific Transfer Entries
    :caption: Contents
 
    introduction.rst
+   secondary_TE.rst
    references
    glossary
