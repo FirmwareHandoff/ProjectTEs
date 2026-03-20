@@ -1,6 +1,6 @@
-[![Build Status](https://github.com/FirmwareHandoff/ProjectTEs/actions/workflows/main.yml/badge.svg)](https://github.com/FirmwareHandoff/ProjectSpecificEntries/actions/workflows/main.yml)
-[![Daily Status](https://github.com/FirmwareHandoff/ProjectTEs/actions/workflows/daily.yml/badge.svg)](https://github.com/FirmwareHandoff/ProjectSpecificEntries/actions/workflows/daily.yml)
-[![Release Version](https://img.shields.io/github/v/release/FirmwareHandoff/ProjectTEs?label=release)](https://github.com/FirmwareHandoff/ProjectSpecificEntries/releases)
+[![Build Status](https://github.com/FirmwareHandoff/ProjectTEs/actions/workflows/main.yml/badge.svg)](https://github.com/FirmwareHandoff/ProjectTEs/actions/workflows/main.yml)
+[![Daily Status](https://github.com/FirmwareHandoff/ProjectTEs/actions/workflows/daily.yml/badge.svg)](https://github.com/FirmwareHandoff/ProjectTEs/actions/workflows/daily.yml)
+[![Release Version](https://img.shields.io/github/v/release/FirmwareHandoff/ProjectTEs?label=release)](https://github.com/FirmwareHandoff/ProjectTEs/releases)
 
 This repository contains the Transfer Entry definitions that are project-specific.
 This is an auxiliary document to theFirmware Handoff specification, which defines a
