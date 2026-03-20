@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Entries related to Trusted Firmware &mdash; Firmware Handoff 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=aecbe2af" />
+
+  
+  
+        <script src="_static/jquery.js?v=8dae8fb0"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. References" href="references.html" />
+    <link rel="prev" title="1. Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Firmware Handoff
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Entries related to Trusted Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">3. References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">4. Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Firmware Handoff</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Entries related to Trusted Firmware</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/secondary_TE.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="entries-related-to-trusted-firmware">
+<span id="tf-entries"></span><h1><span class="section-number">2. </span>Entries related to Trusted Firmware<a class="headerlink" href="#entries-related-to-trusted-firmware" title="Link to this heading"></a></h1>
+<p>The following entry types are defined for Trusted Firmware projects,
+including TF-A, OP-TEE and Hafnium.</p>
+<span id="tf-entries-summary"></span><table class="docutils align-default" id="id9">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Summary of Trusted Firmware Entries</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag ID</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#tab-optee-pageable-part-address"><span class="std std-ref">0x100</span></a></p></td>
+<td><p>OP-TEE Pageable Part Address</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tab-dt-spmc-manifest"><span class="std std-ref">0x101</span></a></p></td>
+<td><p>DT Formatted SPMC Manifest</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tab-entry-point-info"><span class="std std-ref">0x102</span></a></p></td>
+<td><p>AArch64 Entry Point Info</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tab-ffa-sp-binary"><span class="std std-ref">0x103</span></a></p></td>
+<td><p>FF-A SP Binary</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tab-rw-mem-layout"><span class="std std-ref">0x104</span></a></p></td>
+<td><p>RW Memory Layout (64-bit)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tab-mbedtls-heap-info"><span class="std std-ref">0x105</span></a></p></td>
+<td><p>Mbed-TLS Heap Info</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tab-dt-ffa-manifest"><span class="std std-ref">0x106</span></a></p></td>
+<td><p>DT Formatted FF-A Manifest</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tab-rw-mem-layout32"><span class="std std-ref">0x107</span></a></p></td>
+<td><p>RW Memory Layout (32-bit)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tab-entry-point-info32"><span class="std std-ref">0x108</span></a></p></td>
+<td><p>AArch32 Entry Point Info</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tab-gpt-info"><span class="std std-ref">0x109</span></a></p></td>
+<td><p>GPT Error Info</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>OP-TEE pageable part address entry layout (XFERLIST_OPTEE_PAGEABLE_PART_ADDR)</strong></p>
+<p>This entry type holds the address of OP-TEE pageable part which is described in
+<a class="reference internal" href="references.html#opteecore" id="id1"><span>[OPTEECore]</span></a>.
+This address (of type ‘uint64_t’) is used when OPTEED (OP-TEE Dispatcher)
+is the Secure Payload Dispatcher, indicating where to load the pageable image of
+the OP-TEE OS.</p>
+<span id="tab-optee-pageable-part-address"></span><table class="docutils align-default" id="id10">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">OP-TEE pageable part address type layout</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x100</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>The size (in bytes) of the address of OP-TEE pageable part which must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>pp_addr</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size</p></td>
+<td><p>Holds the address of OP-TEE pageable part</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>DT formatted SPMC manifest entry layout (XFERLIST_DT_SPMC_MANIFEST)</strong></p>
+<p>This entry type holds the SPMC (Secure Partition Manager Core) manifest image
+which is in DT format <a class="reference internal" href="references.html#dt" id="id2"><span>[DT]</span></a> and described in <a class="reference internal" href="references.html#spmcattr" id="id3"><span>[SPMCATTR]</span></a>.
+This manifest contains the SPMC attribute node consumed by the SPMD
+(Secure Partition Manager Dispatcher) at boot time.
+It may also contain some information for the SPMC implementation, to
+initialize itself.</p>
+<span id="tab-dt-spmc-manifest"></span><table class="docutils align-default" id="id11">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">DT formatted SPMC manifest type layout</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x101</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>The size of SPMC manifest in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spmc_man</p></td>
+<td><p>data_size</p></td>
+<td><p>hdr_size</p></td>
+<td><p>Holds a SPMC manifest image in DT format.</p></td>
+</tr>
+</tbody>
+</table>
+<p id="bit-ep-info"><strong>AArch64 executable entry point information (XFERLIST_EXEC_EP_INFO64)</strong></p>
+<p>This entry type holds the AArch64 variant of <cite>entry_point_info</cite>.
+<cite>entry_point_info</cite> is a TF-A-specific data structure <a class="reference internal" href="references.html#tf-bl31" id="id4"><span>[TF_BL31]</span></a> used to
+represent the execution state of an image; that is, the state of general purpose
+registers, PC, and SPSR.</p>
+<p>This information is used by clients to setup the execution environment of
+subsequent images. A concrete example is the execution of a bootloader such as
+U-Boot in non-secure mode. In TF-A, the runtime firmware BL31 uses an
+<cite>entry_point_info</cite> structure corresponding to the bootloader, to setup the
+general and special purpose registers. Following conventions
+outlined in <a class="reference internal" href="references.html#fwh" id="id5"><span>[FWH]</span></a> in the Section AArch64 Receiver, the general purpose registers consumed
+by the bootloader contain the base addresses of the device tree, and transfer
+list; along with the transfer list signature.</p>
+<p>In practice, control might be transferred from BL31 to any combination of
+software running in Secure, Non-Secure, or Realm modes.</p>
+<span id="tab-entry-point-info"></span><table class="docutils align-default" id="id12">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Entry point info type layout</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 13.3%" />
+<col style="width: 33.3%" />
+<col style="width: 13.3%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x102</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>Size of the <cite>entry_point_info</cite> structure in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ep_info_hdr</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size</p></td>
+<td><p>Header of type <a class="reference internal" href="#tab-param-header"><span class="std std-ref">param_header</span></a> containing
+information about this structure. The type must be <cite>0x1</cite>, version <cite>0x2</cite>,
+and size <cite>0x58</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>pc</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x8</p></td>
+<td><p>Program counter (entry point into image).</p></td>
+</tr>
+<tr class="row-odd"><td><p>spsr</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x10</p></td>
+<td><p>Saved Program Status Register.</p></td>
+</tr>
+<tr class="row-even"><td><p>x0</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x18</p></td>
+<td><p>Register X0.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x1</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x20</p></td>
+<td><p>Register X1.</p></td>
+</tr>
+<tr class="row-even"><td><p>x2</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x28</p></td>
+<td><p>Register X2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x3</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x30</p></td>
+<td><p>Register X3.</p></td>
+</tr>
+<tr class="row-even"><td><p>x4</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x38</p></td>
+<td><p>Register X4.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x5</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x40</p></td>
+<td><p>Register X5.</p></td>
+</tr>
+<tr class="row-even"><td><p>x6</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x48</p></td>
+<td><p>Register X6.</p></td>
+</tr>
+<tr class="row-odd"><td><p>x7</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x50</p></td>
+<td><p>Register X7.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The structures header contains an attributes field which is used to encode the image’s
+execution state (i.e., Secure, Non-Secure, or Realm).</p>
+<span id="tab-param-header"></span><table class="docutils align-default" id="id13">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Layout of <code class="docutils literal notranslate"><span class="pre">param_header</span></code>.</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td><p>Field</p></td>
+<td><p>Size (bytes)</p></td>
+<td><p>Offset (bytes)</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>0x1</p></td>
+<td><p>0x0</p></td>
+<td><p>Type of the structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>0x1</p></td>
+<td><p>0x1</p></td>
+<td><p>Version of the structure.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>0x2</p></td>
+<td><p>0x2</p></td>
+<td><p>Size of the structure in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>attr</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>Structure attributes.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>FF-A SP binary (XFERLIST_FFA_SP_BINARY)</strong></p>
+<p>This entry holds a reference to an FF-A Secure Partition (SP) binary.</p>
+<p>This TE type is for an SPMC implementation to identify which entry
+relates to the SP’s binary, such that it can install the binary and
+hand-over execution.</p>
+<span id="tab-ffa-sp-binary"></span><table class="docutils align-default" id="id14">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">An FF-A SP binary type layout</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x103</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>The size of the SP binary in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ffa_sp_binary</p></td>
+<td><p>data_size</p></td>
+<td><p>hdr_size</p></td>
+<td><p>Holds the FF-A SP binary.</p></td>
+</tr>
+</tbody>
+</table>
+<p id="bit-mem-layout"><strong>Read-Write Memory Layout Entry Layout (XFERLIST_RW_MEM_LAYOUT64)</strong></p>
+<p>This entry type holds a structure that describes the layout of a read-write
+memory region.</p>
+<p>For example, TF-A uses it to convey to BL2 the extent of memory it has available
+to perform read-write operations on. BL2 maps the memory described by the layout
+into its memory map during platform setup. If other memory types are required
+(i.e. read-only memory) separate TEs should be defined.</p>
+<span id="tab-rw-mem-layout"></span><table class="docutils align-default" id="id15">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Layout for a RW memory layout entry</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 11.1%" />
+<col style="width: 27.8%" />
+<col style="width: 27.8%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x104</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>The size of the layout in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>addr</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size</p></td>
+<td><p>The base address of the memory region.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x8</p></td>
+<td><p>The size of the memory region.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>DT formatted FF-A manifest entry layout (XFERLIST_DT_FFA_MANIFEST)</strong></p>
+<p>This entry type holds the FF-A manifest image which is in DT format <a class="reference internal" href="references.html#dt" id="id6"><span>[DT]</span></a>,
+as described in <a class="reference internal" href="references.html#tfaffamb" id="id7"><span>[TFAFFAMB]</span></a>.
+This manifest contains the SP (Secure Partition) configuration, consumed
+by the SPMC at boot time.</p>
+<p>It may also contain some information to the SP itself.</p>
+<span id="tab-dt-ffa-manifest"></span><table class="docutils align-default" id="id16">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">DT formatted FF-A manifest type layout</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x106</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>The size of FF-A manifest in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ffa_manifest</p></td>
+<td><p>data_size</p></td>
+<td><p>hdr_size</p></td>
+<td><p>Holds a FF-A manifest image in DT format.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mbed-TLS heap information (XFERLIST_MBEDTLS_HEAP_INFO)</strong></p>
+<p>Specifies the location and size of a memory region, carved out for
+stack-based memory allocation in Mbed-TLS. The buffer address and size are
+passed to later stages for initialisation of Mbed-TLS.</p>
+<span id="tab-mbedtls-heap-info"></span><table class="docutils align-default" id="id17">
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Mbed-TLS heap info type layout</span><a class="headerlink" href="#id17" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 11.1%" />
+<col style="width: 22.2%" />
+<col style="width: 44.4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x105</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>This value should be set to <cite>0x10`</cite> i.e. <cite>sizeof(heap_address) + sizeof(heap_size)</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>heap_address</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size</p></td>
+<td><p>The address of memory to be used as the heap.</p></td>
+</tr>
+<tr class="row-even"><td><p>heap_size</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size + 0x8</p></td>
+<td><p>Size of memory region.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read-Write Memory Layout Entry Layout (XFERLIST_RW_MEM_LAYOUT32)</strong></p>
+<p>This entry type holds the 32-bit variant of
+<a class="reference internal" href="#bit-mem-layout"><span class="std std-ref">XFERLIST_RW_MEM_LAYOUT64</span></a>. It is a structure used to
+describe the layout of a read-write memory region. TF-A utilizes this entry type
+to notify BL2 of the available memory for read-write operations. Note, for other
+memory types, such as read-only memory, distinct entries should be created.</p>
+<span id="tab-rw-mem-layout32"></span><table class="docutils align-default" id="id18">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Layout for a RW memory layout entry (32-bit variant)</span><a class="headerlink" href="#id18" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 11.1%" />
+<col style="width: 27.8%" />
+<col style="width: 27.8%" />
+<col style="width: 33.3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Field</p></td>
+<td><p>Size (bytes)</p></td>
+<td><p>Offset (bytes)</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x107</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>The size of the layout in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>addr</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size</p></td>
+<td><p>The 32-bit base address of the memory region.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x4</p></td>
+<td><p>The size of the memory region.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>AArch32 executable entry point information (XFERLIST_EXEC_EP_INFO32)</strong></p>
+<p>This entry type holds the 32-bit variant of the <cite>entry_point_info</cite>
+structure.  <cite>entry_point_info</cite> is a TF-A-specific data structure <a class="reference internal" href="references.html#tf-bl31" id="id8"><span>[TF_BL31]</span></a> used
+to represent the execution state of an image; that is, the state of general
+purpose registers, PC, and SPSR.</p>
+<p>This information is used by clients to setup the execution environment of
+subsequent images. It’s usage is identical to the 64-bit form represented by
+<a class="reference internal" href="#bit-ep-info"><span class="std std-ref">XFERLIST_EXEC_EP_INFO64</span></a>.</p>
+<span id="tab-entry-point-info32"></span><table class="docutils align-default" id="id19">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Entry point info type layout (32-bit variant)</span><a class="headerlink" href="#id19" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 21.4%" />
+<col style="width: 21.4%" />
+<col style="width: 42.9%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Field</p></td>
+<td><p>Size (bytes)</p></td>
+<td><p>Offset (bytes)</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x108</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x4</p></td>
+<td><p>0x4</p></td>
+<td><p>Size of the <cite>entry_point_info</cite> structure in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ep_info_hdr</p></td>
+<td><p>0x8</p></td>
+<td><p>hdr_size</p></td>
+<td><p>Header of type <a class="reference internal" href="#tab-param-header"><span class="std std-ref">param_header</span></a> containing
+information about this structure. The type must be <cite>0x1</cite>, version <cite>0x2</cite>,
+and size <cite>0x24</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>pc</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x8</p></td>
+<td><p>Program counter (entry point into image).</p></td>
+</tr>
+<tr class="row-odd"><td><p>spsr</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0xc</p></td>
+<td><p>Saved Program Status Register.</p></td>
+</tr>
+<tr class="row-even"><td><p>lr_svc</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x10</p></td>
+<td><p>Link register.</p></td>
+</tr>
+<tr class="row-odd"><td><p>r0</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x14</p></td>
+<td><p>Register R0.</p></td>
+</tr>
+<tr class="row-even"><td><p>r1</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x18</p></td>
+<td><p>Register R1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>r2</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x1c</p></td>
+<td><p>Register R2.</p></td>
+</tr>
+<tr class="row-even"><td><p>r3</p></td>
+<td><p>0x4</p></td>
+<td><p>hdr_size + 0x20</p></td>
+<td><p>Register R3.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GUID Partition Table (GPT) error information (XFERLIST_GPT_ERROR_INFO)</strong></p>
+<p>This entry holds an indication of the type of GPT error.
+<cite>gpt_error_info</cite> contains all possible GPT error information.
+It is an 8-bit value. Bit 0 indicates that the secondary GPT is being used,
+due to the corruption of the primary GPT header.
+Bits [7:1] are reserved for future use.</p>
+<span id="tab-gpt-info"></span><table class="docutils align-default" id="id20">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">GPT info type layout</span><a class="headerlink" href="#id20" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 14.3%" />
+<col style="width: 57.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Size (bytes)</p></th>
+<th class="head"><p>Offset (bytes)</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tag_id</p></td>
+<td><p>0x3</p></td>
+<td><p>0x0</p></td>
+<td><p>The tag_id field must be set to <cite>0x109</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdr_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x3</p></td>
+<td><p>The size of this entry header in bytes must be set to <cite>8</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_size</p></td>
+<td><p>0x1</p></td>
+<td><p>0x4</p></td>
+<td><p>The size of the GPT error information in bytes, it is always 1 byte.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gpt_error_info</p></td>
+<td><p>data_size</p></td>
+<td><p>hdr_size</p></td>
+<td><p>The <cite>gpt_error_info</cite> field contains GPT error information.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="references.html" class="btn btn-neutral float-right" title="3. References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2025, Firmware handoff contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: main
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="secondary_TE.html">main</a></dd>
+        </dl>
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
