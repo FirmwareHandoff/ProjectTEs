@@ -9,7 +9,7 @@ stages during platform initialization.
 
 The documentation is generated using the Sphinx framework. A version of this
 specification, rendered in HTML, is available
-[here](https://firmwarehandoff.github.io/ProjectSpecificEntries/).
+[here](https://firmwarehandoff.github.io/ProjectTEs/).
 
 Project dependencies
 ====================
