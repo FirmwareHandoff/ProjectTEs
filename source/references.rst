@@ -24,3 +24,5 @@ References
 .. [TF_BL31] `Data structures used in the BL31 cold boot interface v2.12 <https://trustedfirmware-a.readthedocs.io/en/v2.12.0/design/firmware-design.html#data-structures-used-in-the-bl31-cold-boot-interface>`__
 
 .. [SPMCATTR] `The SPMC manifest v2.12: <https://hafnium.readthedocs.io/en/v2.12.0/secure-partition-manager/secure-partition-manager.html#spmc-manifest>`__
+
+.. [TB_FW_CONFIG] `Trusted Boot Firmware Configuration bindings <https://review.trustedfirmware.org/plugins/gitiles/TF-A/trusted-firmware-a/+/refs/tags/v2.15.0/docs/components/fconf/tb_fw_bindings.rst>`__
